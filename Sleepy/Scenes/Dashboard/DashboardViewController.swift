@@ -20,7 +20,8 @@ final class DashboardViewController: UIViewController, StoryboardLoadable {
 
     var router: DashboardRouting?
 
-    @IBOutlet weak var collectionView: UICollectionView!
+    private var gradientBackgroundLayer: CAGradientLayer?
+    @IBOutlet private weak var collectionView: UICollectionView!
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -33,9 +34,11 @@ final class DashboardViewController: UIViewController, StoryboardLoadable {
 
         viewModel.retrieveDashboard(blobID: "a07152f5-775c-11eb-a533-c90b9d55001f")
     }
-
     private func setupViews() {
+        view.backgroundColor = .primaryBackground
+
         let collectionViewLayout = UICollectionViewFlowLayout()
+        collectionView.backgroundColor = .clear
         collectionViewLayout.scrollDirection = .vertical
         collectionViewLayout.minimumLineSpacing = Margin.medium
         collectionViewLayout.minimumInteritemSpacing = Margin.medium
@@ -118,5 +121,11 @@ extension DashboardViewController: UICollectionViewDelegateFlowLayout {
             let width = (collectionView.frame.width - Margin.medium) / 2
             return CGSize(width: width, height: width)
         }
+    }
+
+    func collectionView(_ collectionView: UICollectionView,
+                        layout collectionViewLayout: UICollectionViewLayout,
+                        insetForSectionAt section: Int) -> UIEdgeInsets {
+        return UIEdgeInsets(top: Margin.medium, left: 0, bottom: Margin.medium, right: 0)
     }
 }

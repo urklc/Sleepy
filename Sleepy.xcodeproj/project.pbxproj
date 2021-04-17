@@ -10,6 +10,8 @@
 		0711F44B9B00735EA3037FD3 /* Pods_Sleepy_SleepyUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 55BE029BB66AE6F249E37661 /* Pods_Sleepy_SleepyUITests.framework */; };
 		24FF8D3929399EE4379B2FC3 /* Pods_Sleepy.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 689E3F164B9CA77F82D4B32D /* Pods_Sleepy.framework */; };
 		2B0F0ABC26294D6F00D970E3 /* DashboardBannerCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B0F0ABB26294D6F00D970E3 /* DashboardBannerCollectionViewCell.swift */; };
+		2B1BD7D026296DB2007EE9F0 /* UIColor+Sleepy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B1BD7CE26296DB2007EE9F0 /* UIColor+Sleepy.swift */; };
+		2B1BD7D126296DB2007EE9F0 /* UILabel+Styling.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B1BD7CF26296DB2007EE9F0 /* UILabel+Styling.swift */; };
 		2B420A70262891B200FAC9EA /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2B420A6F262891B200FAC9EA /* Main.storyboard */; };
 		2B420A7F262894D200FAC9EA /* StoryboardLoadable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B420A7E262894D200FAC9EA /* StoryboardLoadable.swift */; };
 		2B420A8F2628966C00FAC9EA /* DashboardItemCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B420A8E2628966C00FAC9EA /* DashboardItemCollectionViewCell.swift */; };
@@ -68,6 +70,8 @@
 
 /* Begin PBXFileReference section */
 		2B0F0ABB26294D6F00D970E3 /* DashboardBannerCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DashboardBannerCollectionViewCell.swift; sourceTree = "<group>"; };
+		2B1BD7CE26296DB2007EE9F0 /* UIColor+Sleepy.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIColor+Sleepy.swift"; sourceTree = "<group>"; };
+		2B1BD7CF26296DB2007EE9F0 /* UILabel+Styling.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UILabel+Styling.swift"; sourceTree = "<group>"; };
 		2B420A6F262891B200FAC9EA /* Main.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
 		2B420A7E262894D200FAC9EA /* StoryboardLoadable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoryboardLoadable.swift; sourceTree = "<group>"; };
 		2B420A8E2628966C00FAC9EA /* DashboardItemCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DashboardItemCollectionViewCell.swift; sourceTree = "<group>"; };
@@ -161,6 +165,8 @@
 			isa = PBXGroup;
 			children = (
 				2B420A7E262894D200FAC9EA /* StoryboardLoadable.swift */,
+				2B1BD7CE26296DB2007EE9F0 /* UIColor+Sleepy.swift */,
+				2B1BD7CF26296DB2007EE9F0 /* UILabel+Styling.swift */,
 			);
 			path = UI;
 			sourceTree = "<group>";
@@ -644,7 +650,9 @@
 				2BB7592E2628228B0047F696 /* SleepyError.swift in Sources */,
 				2BC28FD0262867C700A565BE /* StoryDetailViewController.swift in Sources */,
 				2BB75937262824120047F696 /* DashboardRequest.swift in Sources */,
+				2B1BD7D126296DB2007EE9F0 /* UILabel+Styling.swift in Sources */,
 				2BB7594D262825B00047F696 /* DashboardNetworkController.swift in Sources */,
+				2B1BD7D026296DB2007EE9F0 /* UIColor+Sleepy.swift in Sources */,
 				2B4E69FE2628BB000052EF7F /* DashboardItemListView.swift in Sources */,
 				2BB75953262826050047F696 /* DashboardResponse.swift in Sources */,
 				2BB759092628205F0047F696 /* NetworkController.swift in Sources */,

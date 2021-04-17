@@ -19,7 +19,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="oMQ-nf-ti8">
-                                <rect key="frame" x="8" y="52" width="398" height="802"/>
+                                <rect key="frame" x="16" y="60" width="382" height="786"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <collectionViewFlowLayout key="collectionViewLayout" automaticEstimatedItemSize="YES" minimumLineSpacing="10" minimumInteritemSpacing="10" id="5iY-Vl-Lcn">
                                     <size key="itemSize" width="128" height="128"/>
@@ -46,10 +46,10 @@
                         <viewLayoutGuide key="safeArea" id="r3c-6O-TK4"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
-                            <constraint firstItem="r3c-6O-TK4" firstAttribute="bottom" secondItem="oMQ-nf-ti8" secondAttribute="bottom" constant="8" id="3W7-m3-wCP"/>
-                            <constraint firstItem="oMQ-nf-ti8" firstAttribute="top" secondItem="r3c-6O-TK4" secondAttribute="top" constant="8" id="R2N-fu-4JD"/>
-                            <constraint firstItem="r3c-6O-TK4" firstAttribute="trailing" secondItem="oMQ-nf-ti8" secondAttribute="trailing" constant="8" id="cC3-Ht-B9P"/>
-                            <constraint firstItem="oMQ-nf-ti8" firstAttribute="leading" secondItem="r3c-6O-TK4" secondAttribute="leading" constant="8" id="yME-KH-F1w"/>
+                            <constraint firstItem="r3c-6O-TK4" firstAttribute="bottom" secondItem="oMQ-nf-ti8" secondAttribute="bottom" constant="16" id="3W7-m3-wCP"/>
+                            <constraint firstItem="oMQ-nf-ti8" firstAttribute="top" secondItem="r3c-6O-TK4" secondAttribute="top" constant="16" id="R2N-fu-4JD"/>
+                            <constraint firstItem="r3c-6O-TK4" firstAttribute="trailing" secondItem="oMQ-nf-ti8" secondAttribute="trailing" constant="16" id="cC3-Ht-B9P"/>
+                            <constraint firstItem="oMQ-nf-ti8" firstAttribute="leading" secondItem="r3c-6O-TK4" secondAttribute="leading" constant="16" id="yME-KH-F1w"/>
                         </constraints>
                     </view>
                     <connections>

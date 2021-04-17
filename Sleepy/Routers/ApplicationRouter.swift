@@ -18,7 +18,10 @@ final class ApplicationRouter: GenericRouting {
         controller.router = DashboardRouter()
 
         window = UIWindow(frame: UIScreen.main.bounds)
-        window.rootViewController = UINavigationController(rootViewController: controller)
+
+        let navigationController = UINavigationController(rootViewController: controller)
+        navigationController.isNavigationBarHidden = true
+        window.rootViewController = navigationController
         window.makeKeyAndVisible()
     }
 }

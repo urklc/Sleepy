@@ -10,6 +10,8 @@ import Ugur
 
 final class DashboardBannerCollectionViewCell: UICollectionViewCell {
 
+    private var containerView: UIView!
+
     override init(frame: CGRect) {
         super.init(frame: .zero)
         setupView()
@@ -20,32 +22,55 @@ final class DashboardBannerCollectionViewCell: UICollectionViewCell {
         setupView()
     }
 
+    override func layoutSubviews() {
+        super.layoutSubviews()
+
+        containerView.layer.uk_applyShadow()
+        containerView.layer.cornerRadius = Margin.medium
+    }
+
     private func setupView() {
-        backgroundColor = UIColor.purple
+        contentView.backgroundColor = .clear
+
+        containerView = UIView()
+        containerView.translatesAutoresizingMaskIntoConstraints = false
+        containerView.backgroundColor = .sleepyPurple
 
         let iconImageView = UIImageView()
         iconImageView.translatesAutoresizingMaskIntoConstraints = false
         iconImageView.image = UIImage(named: "ic_night")
-        contentView.addSubview(iconImageView)
+        containerView.addSubview(iconImageView)
 
         let titleLabel = UILabel()
-        // TODO: Styling
-        titleLabel.textColor = .white
-        titleLabel.translatesAutoresizingMaskIntoConstraints = false
         titleLabel.numberOfLines = 0
+        titleLabel.applyDefaultStyling(style: .title3)
+        titleLabel.translatesAutoresizingMaskIntoConstraints = false
         // TODO: Localization
         titleLabel.text = "Look. Pretty, isn’t it? Perfectly balanced. As all things should be."
-        contentView.addSubview(titleLabel)
+        containerView.addSubview(titleLabel)
+
+        contentView.addSubview(containerView)
 
         iconImageView.setContentCompressionResistancePriority(.required, for: .horizontal)
 
         NSLayoutConstraint.activate([
-            iconImageView.leadingAnchor.constraint(equalTo: contentView.leadingAnchor),
-            iconImageView.centerYAnchor.constraint(equalTo: contentView.centerYAnchor),
-            titleLabel.leadingAnchor.constraint(equalTo: iconImageView.trailingAnchor),
-            titleLabel.trailingAnchor.constraint(equalTo: contentView.trailingAnchor),
-            titleLabel.topAnchor.constraint(equalTo: contentView.topAnchor),
-            titleLabel.bottomAnchor.constraint(equalTo: contentView.bottomAnchor)
+            contentView.leadingAnchor.constraint(equalTo: containerView.leadingAnchor,
+                                                 constant: -Margin.small),
+            contentView.trailingAnchor.constraint(equalTo: containerView.trailingAnchor,
+                                                  constant: Margin.small),
+            contentView.topAnchor.constraint(equalTo: containerView.topAnchor,
+                                             constant: -Margin.small),
+            contentView.bottomAnchor.constraint(equalTo: containerView.bottomAnchor,
+                                                constant: Margin.small),
+            iconImageView.leadingAnchor.constraint(equalTo: containerView.leadingAnchor,
+                                                   constant: Margin.medium),
+            iconImageView.centerYAnchor.constraint(equalTo: containerView.centerYAnchor),
+            titleLabel.leadingAnchor.constraint(equalTo: iconImageView.trailingAnchor,
+                                                constant: Margin.medium),
+            titleLabel.trailingAnchor.constraint(equalTo: containerView.trailingAnchor,
+                                                 constant: -Margin.medium),
+            titleLabel.topAnchor.constraint(equalTo: containerView.topAnchor),
+            titleLabel.bottomAnchor.constraint(equalTo: containerView.bottomAnchor)
         ])
     }
 }
