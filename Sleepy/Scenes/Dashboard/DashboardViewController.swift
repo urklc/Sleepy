@@ -40,8 +40,8 @@ final class DashboardViewController: UIViewController, StoryboardLoadable {
         let collectionViewLayout = UICollectionViewFlowLayout()
         collectionView.backgroundColor = .clear
         collectionViewLayout.scrollDirection = .vertical
-        collectionViewLayout.minimumLineSpacing = Margin.medium
-        collectionViewLayout.minimumInteritemSpacing = Margin.medium
+        collectionViewLayout.minimumLineSpacing = Margin.xlarge
+        collectionViewLayout.minimumInteritemSpacing = Margin.large
         collectionView.collectionViewLayout = collectionViewLayout
 
         collectionView.uk_registerCell(DashboardItemCollectionViewCell.self)
@@ -112,20 +112,25 @@ extension DashboardViewController: UICollectionViewDelegateFlowLayout {
                         sizeForItemAt indexPath: IndexPath) -> CGSize {
         switch DashboardSection(rawValue: indexPath.section)! {
         case .meditation:
-            return CGSize(width: collectionView.frame.width, height: 200)
+            return CGSize(width: collectionView.frame.width, height: 300)
 
         case .banner:
-            return CGSize(width: collectionView.frame.width, height: 100)
+            return CGSize(width: collectionView.frame.width, height: 150)
 
         case .story:
-            let width = (collectionView.frame.width - Margin.medium) / 2
-            return CGSize(width: width, height: width)
+            let columnCount: CGFloat = 2
+            let width = (collectionView.frame.width - ((columnCount + 1) * Margin.large)) / columnCount
+            return CGSize(width: width, height: width * 1.3)
         }
     }
 
     func collectionView(_ collectionView: UICollectionView,
                         layout collectionViewLayout: UICollectionViewLayout,
                         insetForSectionAt section: Int) -> UIEdgeInsets {
-        return UIEdgeInsets(top: Margin.medium, left: 0, bottom: Margin.medium, right: 0)
+        let horizontalMargin = DashboardSection.story.rawValue == section ? Margin.large : 0
+        return UIEdgeInsets(top: Margin.small,
+                            left: horizontalMargin,
+                            bottom: Margin.small,
+                            right: horizontalMargin)
     }
 }

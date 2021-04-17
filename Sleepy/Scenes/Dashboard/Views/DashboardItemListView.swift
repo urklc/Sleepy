@@ -30,16 +30,19 @@ final class DashboardItemListView: UIView {
 
     private func setupViews() {
         let collectionViewLayout = UICollectionViewFlowLayout()
+        collectionViewLayout.minimumLineSpacing = Margin.medium
         collectionViewLayout.scrollDirection = .horizontal
 
         collectionView = UICollectionView(frame: .zero, collectionViewLayout: collectionViewLayout)
         collectionView.translatesAutoresizingMaskIntoConstraints = false
         collectionView.dataSource = self
         collectionView.delegate = self
+        collectionView.backgroundColor = .clear
+        collectionView.showsHorizontalScrollIndicator = false
         collectionView.contentInset = UIEdgeInsets(top: 0,
-                                                   left: Margin.medium,
+                                                   left: Margin.large,
                                                    bottom: 0,
-                                                   right: Margin.medium)
+                                                   right: Margin.large)
         collectionView.uk_registerCell(DashboardItemCollectionViewCell.self)
         addSubview(collectionView)
         NSLayoutConstraint.activate([
@@ -77,6 +80,7 @@ extension DashboardItemListView: UICollectionViewDelegateFlowLayout {
     func collectionView(_ collectionView: UICollectionView,
                         layout collectionViewLayout: UICollectionViewLayout,
                         sizeForItemAt indexPath: IndexPath) -> CGSize {
-        return CGSize(width: collectionView.frame.height, height: collectionView.frame.height)
+        return CGSize(width: collectionView.frame.height * 0.6,
+                      height: collectionView.frame.height)
     }
 }

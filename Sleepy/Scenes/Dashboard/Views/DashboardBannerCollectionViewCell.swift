@@ -43,7 +43,7 @@ final class DashboardBannerCollectionViewCell: UICollectionViewCell {
 
         let titleLabel = UILabel()
         titleLabel.numberOfLines = 0
-        titleLabel.applyDefaultStyling(style: .title3)
+        titleLabel.applyDefaultStyling(style: .headline)
         titleLabel.translatesAutoresizingMaskIntoConstraints = false
         // TODO: Localization
         titleLabel.text = "Look. Pretty, isn’t it? Perfectly balanced. As all things should be."
@@ -55,13 +55,13 @@ final class DashboardBannerCollectionViewCell: UICollectionViewCell {
 
         NSLayoutConstraint.activate([
             contentView.leadingAnchor.constraint(equalTo: containerView.leadingAnchor,
-                                                 constant: -Margin.small),
+                                                 constant: -Margin.large),
             contentView.trailingAnchor.constraint(equalTo: containerView.trailingAnchor,
-                                                  constant: Margin.small),
+                                                  constant: Margin.large),
             contentView.topAnchor.constraint(equalTo: containerView.topAnchor,
-                                             constant: -Margin.small),
+                                             constant: -Margin.large),
             contentView.bottomAnchor.constraint(equalTo: containerView.bottomAnchor,
-                                                constant: Margin.small),
+                                                constant: Margin.large),
             iconImageView.leadingAnchor.constraint(equalTo: containerView.leadingAnchor,
                                                    constant: Margin.medium),
             iconImageView.centerYAnchor.constraint(equalTo: containerView.centerYAnchor),

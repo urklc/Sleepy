@@ -7,26 +7,22 @@
 
 import UIKit
 
-enum SleepyFont {
-    case book, light
+enum SleepyFontWeight {
 
-    var fontName: String {
-        switch self {
-        case .book:
-            return "Hanken-Book"
-        case .light:
-            return "Hanken-Light"
-        }
-    }
+    case bold, regular
 }
 
 extension UILabel {
 
-    func applyDefaultStyling(sleepyFont: SleepyFont = .light, style: UIFont.TextStyle = .body) {
-        let customFont = UIFont(name: sleepyFont.fontName, size: 17)!
+    func applyDefaultStyling(weight: SleepyFontWeight = .regular, style: UIFont.TextStyle = .body) {
+        let preferredFont = UIFont.preferredFont(forTextStyle: style)
+        switch weight {
+        case .bold:
+            font = UIFont.systemFont(ofSize: preferredFont.pointSize, weight: .bold)
+        default:
+            font = preferredFont
+        }
         adjustsFontForContentSizeCategory = true
-        font = UIFontMetrics(forTextStyle: style).scaledFont(for: customFont)
-
         textColor = .sleepyText
     }
 }

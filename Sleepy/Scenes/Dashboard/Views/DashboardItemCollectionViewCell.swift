@@ -16,7 +16,10 @@ final class DashboardItemCollectionViewCell: UICollectionViewCell {
             subtitleLabel.text = item?.subtitle
 
             // TODO: Add caching
-            downloadSafeImage(view: itemImageView, urlString: item?.imageUrl)
+//            downloadSafeImage(view: itemImageView, urlString: item?.imageUrl)
+            // TODO: Remove this
+            let rand = arc4random() % 10000
+            downloadSafeImage(view: itemImageView, urlString: "https://picsum.photos/600/400?random=\(rand)")
         }
     }
 
@@ -43,8 +46,14 @@ final class DashboardItemCollectionViewCell: UICollectionViewCell {
         item = nil
     }
 
+    override func layoutSubviews() {
+        super.layoutSubviews()
+
+        itemImageView.clipsToBounds = true
+        itemImageView.layer.cornerRadius = Margin.medium
+    }
+
     private func setupView() {
-        contentView.backgroundColor = UIColor.red
         contentView.clipsToBounds = true
 
         itemImageView = UIImageView()
@@ -53,13 +62,14 @@ final class DashboardItemCollectionViewCell: UICollectionViewCell {
         contentView.addSubview(itemImageView)
 
         titleLabel = UILabel()
-        titleLabel.textColor = .white
         titleLabel.translatesAutoresizingMaskIntoConstraints = false
+        titleLabel.applyDefaultStyling(weight: .bold, style: .callout)
         contentView.addSubview(titleLabel)
 
         subtitleLabel = UILabel()
-        subtitleLabel.textColor = .white
         subtitleLabel.translatesAutoresizingMaskIntoConstraints = false
+        subtitleLabel.adjustsFontSizeToFitWidth = true
+        subtitleLabel.applyDefaultStyling(style: .footnote)
         contentView.addSubview(subtitleLabel)
 
         titleLabel.setContentCompressionResistancePriority(.required, for: .vertical)
@@ -69,11 +79,14 @@ final class DashboardItemCollectionViewCell: UICollectionViewCell {
             itemImageView.leadingAnchor.constraint(equalTo: contentView.leadingAnchor),
             itemImageView.trailingAnchor.constraint(equalTo: contentView.trailingAnchor),
             itemImageView.topAnchor.constraint(equalTo: contentView.topAnchor),
-            itemImageView.bottomAnchor.constraint(equalTo: titleLabel.topAnchor),
+            itemImageView.bottomAnchor.constraint(equalTo: titleLabel.topAnchor,
+                                                  constant: -Margin.medium),
             titleLabel.leadingAnchor.constraint(equalTo: contentView.leadingAnchor),
-            titleLabel.bottomAnchor.constraint(equalTo: subtitleLabel.topAnchor),
+            titleLabel.bottomAnchor.constraint(equalTo: subtitleLabel.topAnchor,
+                                               constant: -Margin.small),
             subtitleLabel.leadingAnchor.constraint(equalTo: contentView.leadingAnchor),
-            subtitleLabel.bottomAnchor.constraint(equalTo: contentView.bottomAnchor)
+            subtitleLabel.bottomAnchor.constraint(equalTo: contentView.bottomAnchor),
+            subtitleLabel.trailingAnchor.constraint(equalTo: contentView.trailingAnchor)
         ])
     }
 }
