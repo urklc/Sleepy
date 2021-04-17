@@ -1,5 +1,5 @@
 //
-//  StoryDetailViewModel.swift
+//  DashboardDetailViewModel.swift
 //  Sleepy
 //
 //  Created by Ugur Kilic on 15.04.2021.
@@ -7,7 +7,7 @@
 
 import Foundation
 
-final class StoryDetailViewModel {
+final class DashboardDetailViewModel {
 
     enum Change {
 

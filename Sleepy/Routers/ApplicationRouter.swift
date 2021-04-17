@@ -7,13 +7,14 @@
 
 import Foundation
 import UIKit
+import Ugur
 
 final class ApplicationRouter: GenericRouting {
 
     private var window: UIWindow!
 
     func initialize() {
-        let controller = DashboardViewController.loadFromStoryboard()
+        let controller: DashboardViewController = Global.mainStoryboad.load()
         controller.viewModel = DashboardViewModel()
         controller.router = DashboardRouter()
 

@@ -10,6 +10,9 @@ import UIKit
 enum Global {
 
     static let baseURL = URL(string: "https://jsonblob.com/")!
+
+    static let mainStoryboad = UIStoryboard(name: "Main",
+                                            bundle: Bundle.main)
 }
 
 enum Margin {

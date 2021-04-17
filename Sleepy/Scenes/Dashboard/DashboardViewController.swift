@@ -24,9 +24,7 @@ enum DashboardSection: Int, CaseIterable {
     }
 }
 
-final class DashboardViewController: UIViewController, StoryboardLoadable {
-
-    static let defaultStoryboardName = "Main"
+final class DashboardViewController: UIViewController {
 
     var viewModel: DashboardViewModel!
 
@@ -46,6 +44,19 @@ final class DashboardViewController: UIViewController, StoryboardLoadable {
 
         viewModel.retrieveDashboard(blobID: "a07152f5-775c-11eb-a533-c90b9d55001f")
     }
+
+    override func viewWillTransition(to size: CGSize, with coordinator: UIViewControllerTransitionCoordinator) {
+        super.viewWillTransition(to: size, with: coordinator)
+
+        collectionView?.collectionViewLayout.invalidateLayout()
+    }
+
+    override func traitCollectionDidChange(_ previousTraitCollection: UITraitCollection?) {
+        super.traitCollectionDidChange(previousTraitCollection)
+
+        collectionView?.collectionViewLayout.invalidateLayout()
+    }
+
     private func setupViews() {
         view.backgroundColor = .primaryBackground
 
@@ -153,7 +164,8 @@ extension DashboardViewController: UICollectionViewDelegateFlowLayout {
 
         case .story:
             let columnCount: CGFloat = 2
-            let width = (collectionView.frame.width - ((columnCount + 1) * Margin.large)) / columnCount
+            let minWidth = (collectionView.frame.width - ((columnCount + 1) * Margin.large)) / columnCount
+            let width = min(minWidth, 160)
             return CGSize(width: width, height: width * 1.3)
         }
     }

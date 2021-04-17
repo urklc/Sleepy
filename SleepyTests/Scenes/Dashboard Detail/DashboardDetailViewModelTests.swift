@@ -1,5 +1,5 @@
 //
-//  StoryDetailViewModelTests.swift
+//  DashboardDetailViewModelTests.swift
 //  SleepyTests
 //
 //  Created by Ugur Kilic on 15.04.2021.
@@ -8,15 +8,15 @@
 import XCTest
 @testable import Sleepy
 
-class StoryDetailViewModelTests: XCTestCase {
+class DashboardDetailViewModelTests: XCTestCase {
 
     class Box {
 
-        let model: StoryDetailViewModel
-        var changes: [StoryDetailViewModel.Change] = []
+        let model: DashboardDetailViewModel
+        var changes: [DashboardDetailViewModel.Change] = []
 
-        init(story: Story) {
-            model = StoryDetailViewModel(story: story)
+        init(item: DashboardItem) {
+            model = DashboardDetailViewModel(item: item)
             model.stateChangeHandler = { self.changes.append($0) }
         }
     }
@@ -25,12 +25,12 @@ class StoryDetailViewModelTests: XCTestCase {
 
     func testModelNotifiesWithInitialStory() {
         let dummyStory = Story.random(suffix: 1)
-        box = Box(story: dummyStory)
+        box = Box(item: dummyStory)
 
         switch box.changes[0] {
-        case let .initial(story):
-            XCTAssertEqual(story.name,
-                           dummyStory.name,
+        case let .initial(item):
+            XCTAssertEqual(item.title,
+                           dummyStory.title,
                            "Model should notify with initial story after binding!")
         }
     }

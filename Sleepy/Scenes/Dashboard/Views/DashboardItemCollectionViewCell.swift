@@ -17,7 +17,8 @@ final class DashboardItemCollectionViewCell: UICollectionViewCell {
 
             // TODO: Add caching
 //            downloadSafeImage(view: itemImageView, urlString: item?.imageUrl)
-            // TODO: Remove this
+
+            // TODO: Remove random images
             let rand = arc4random() % 10000
             downloadSafeImage(view: itemImageView, urlString: "https://picsum.photos/600/400?random=\(rand)")
         }

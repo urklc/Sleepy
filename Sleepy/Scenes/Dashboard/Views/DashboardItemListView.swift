@@ -36,6 +36,12 @@ final class DashboardItemListView: UIView {
         setupViews()
     }
 
+    override func traitCollectionDidChange(_ previousTraitCollection: UITraitCollection?) {
+        super.traitCollectionDidChange(previousTraitCollection)
+
+        collectionView?.collectionViewLayout.invalidateLayout()
+    }
+
     private func setupViews() {
         let collectionViewLayout = UICollectionViewFlowLayout()
         collectionViewLayout.minimumLineSpacing = Margin.medium

@@ -1,5 +1,5 @@
 //
-//  StoryDetailViewController.swift
+//  DashboardDetailViewController.swift
 //  Sleepy
 //
 //  Created by Ugur Kilic on 15.04.2021.
@@ -7,11 +7,9 @@
 
 import UIKit
 
-final class StoryDetailViewController: UIViewController, StoryboardLoadable {
+final class DashboardDetailViewController: UIViewController {
 
-    static let defaultStoryboardName = "Main"
-
-    var viewModel: StoryDetailViewModel!
+    var viewModel: DashboardDetailViewModel!
 
     var router: GenericRouting?
 
@@ -46,7 +44,7 @@ final class StoryDetailViewController: UIViewController, StoryboardLoadable {
         dateLabel.applyDefaultStyling(style: .caption1)
     }
 
-    private func apply(_ change: StoryDetailViewModel.Change) {
+    private func apply(_ change: DashboardDetailViewModel.Change) {
         switch change {
         case let .initial(item):
             titleLabel.text = item.title
