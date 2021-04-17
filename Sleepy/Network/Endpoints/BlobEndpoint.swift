@@ -7,7 +7,7 @@
 
 import Foundation
 
-final class BlobEndpoint: Endpoint {
+struct BlobEndpoint: Endpoint {
 
     private let blobID: String
 
@@ -16,6 +16,6 @@ final class BlobEndpoint: Endpoint {
     }
 
     var path: String {
-        "/api/jsonBlob/\(blobID)"
+        "api/jsonBlob/\(blobID)"
     }
 }

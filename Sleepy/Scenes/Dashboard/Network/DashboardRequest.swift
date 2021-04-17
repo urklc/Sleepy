@@ -1,5 +1,5 @@
 //
-//  BlobRequest.swift
+//  DashboardRequest.swift
 //  Sleepy
 //
 //  Created by Ugur Kilic on 15.04.2021.
@@ -7,7 +7,7 @@
 
 import Foundation
 
-final class BlobRequest: Request {
+struct DashboardRequest: Request {
 
     let endpoint: Endpoint
 
