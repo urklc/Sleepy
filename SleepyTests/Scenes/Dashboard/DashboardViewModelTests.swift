@@ -23,23 +23,6 @@ class DashboardViewModelTests: XCTestCase {
 
     private var box: Box!
 
-    // TODO: Extend mocking
-    private func randomMeditation(suffix: Int) -> Meditation {
-        Meditation(title: "meditation\(suffix)",
-                   subtitle: "",
-                   image: SleepyImageModel(small: "", large: ""),
-                   releaseDate: Date(),
-                   content: nil)
-    }
-
-    private func randomStory(suffix: Int) -> Story {
-        Story(name: "story\(suffix)",
-              category: "",
-              image: SleepyImageModel(small: "", large: ""),
-              date: Date(),
-              content: nil)
-    }
-
     func testModelCallsDataProvider() {
         let dataProviderSpy = DashboardDataProviderSpy()
         box = Box(dataProvider: dataProviderSpy)
@@ -89,8 +72,8 @@ class DashboardViewModelTests: XCTestCase {
     }
 
     func testModelNotifiesWithDataFromDataProviderWhenRetrieval() {
-        let dummyMeditations = Array(0..<4).map { randomMeditation(suffix: $0) }
-        let dummyStories = Array(0..<4).map { randomStory(suffix: $0) }
+        let dummyMeditations = Array(0..<4).map { Meditation.random(suffix: $0) }
+        let dummyStories = Array(0..<4).map { Story.random(suffix: $0) }
         let dummyResponse = DashboardResponse(isBannerEnabled: true,
                                               meditations: dummyMeditations,
                                               stories: dummyStories)
