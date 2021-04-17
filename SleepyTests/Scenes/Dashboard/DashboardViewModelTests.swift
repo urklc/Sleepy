@@ -87,11 +87,11 @@ class DashboardViewModelTests: XCTestCase {
         var isNotified = false
         box.changes.forEach {
             switch $0 {
-            case let .items(isBannerEnabled, meditations, stories):
+            case .items:
                 isNotified = true
-                XCTAssertEqual(isBannerEnabled, dummyResponse.isBannerEnabled)
-                XCTAssertEqual(meditations.count, dummyResponse.meditations.count)
-                XCTAssertEqual(stories.count, dummyResponse.stories.count)
+                XCTAssertEqual(box.model.isBannerEnabled, dummyResponse.isBannerEnabled)
+                XCTAssertEqual(box.model.meditations.count, dummyResponse.meditations.count)
+                XCTAssertEqual(box.model.stories.count, dummyResponse.stories.count)
 
             default:
                 break

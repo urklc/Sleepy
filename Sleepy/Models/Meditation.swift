@@ -15,3 +15,10 @@ struct Meditation: Decodable {
     let releaseDate: Date
     let content: String?
 }
+
+extension Meditation: DashboardItem {
+
+    var imageUrl: String {
+        return image.small
+    }
+}

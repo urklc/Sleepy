@@ -15,3 +15,17 @@ struct Story: Decodable {
     let date: Date
     let content: String?
 }
+
+extension Story: DashboardItem {
+    var title: String {
+        name
+    }
+
+    var subtitle: String {
+        category
+    }
+
+    var imageUrl: String {
+        return image.small
+    }
+}

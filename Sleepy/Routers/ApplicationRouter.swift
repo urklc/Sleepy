@@ -13,7 +13,7 @@ final class ApplicationRouter: GenericRouting {
     private var window: UIWindow!
 
     func initialize() {
-        let controller = DashboardViewController()
+        let controller = DashboardViewController.loadFromStoryboard()
         controller.viewModel = DashboardViewModel()
         controller.router = DashboardRouter()
 

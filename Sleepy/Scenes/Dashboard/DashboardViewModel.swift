@@ -13,18 +13,18 @@ final class DashboardViewModel {
 
         case loading(Bool)
         case error(SleepyError?)
-        case items(isBannerEnabled: Bool, meditations: [Meditation], stories: [Story])
+        case items
     }
 
     var stateChangeHandler: ((Change) -> Void)?
 
+    private(set) var isBannerEnabled = false
+
+    private(set) var meditations: [Meditation] = []
+
+    private(set) var stories: [Story] = []
+
     private let dataProvider: DashboardNetworkProvider?
-
-    private var isBannerEnabled = false
-
-    private var meditations: [Meditation] = []
-
-    private var stories: [Story] = []
 
     private var error: SleepyError? {
         didSet {
@@ -54,9 +54,7 @@ final class DashboardViewModel {
                 self.isBannerEnabled = response.isBannerEnabled
                 self.meditations = response.meditations
                 self.stories = response.stories
-                self.stateChangeHandler?(.items(isBannerEnabled: self.isBannerEnabled,
-                                                meditations: self.meditations,
-                                                stories: self.stories))
+                self.stateChangeHandler?(.items)
             }
         }
     }
