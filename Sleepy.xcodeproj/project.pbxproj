@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		0711F44B9B00735EA3037FD3 /* Pods_Sleepy_SleepyUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 55BE029BB66AE6F249E37661 /* Pods_Sleepy_SleepyUITests.framework */; };
 		24FF8D3929399EE4379B2FC3 /* Pods_Sleepy.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 689E3F164B9CA77F82D4B32D /* Pods_Sleepy.framework */; };
+		2B0F0ABC26294D6F00D970E3 /* DashboardBannerCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B0F0ABB26294D6F00D970E3 /* DashboardBannerCollectionViewCell.swift */; };
 		2B420A70262891B200FAC9EA /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2B420A6F262891B200FAC9EA /* Main.storyboard */; };
 		2B420A7F262894D200FAC9EA /* StoryboardLoadable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B420A7E262894D200FAC9EA /* StoryboardLoadable.swift */; };
 		2B420A8F2628966C00FAC9EA /* DashboardItemCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B420A8E2628966C00FAC9EA /* DashboardItemCollectionViewCell.swift */; };
@@ -43,6 +44,8 @@
 		2BC28FD0262867C700A565BE /* StoryDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BC28FCF262867C700A565BE /* StoryDetailViewController.swift */; };
 		2BC28FD82628683800A565BE /* DashboardRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BC28FD72628683800A565BE /* DashboardRouter.swift */; };
 		2BC28FDD262868B800A565BE /* GenericRouting.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BC28FDC262868B800A565BE /* GenericRouting.swift */; };
+		2BFF2D442629616C006DE698 /* Hanken-Light.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 2BFF2D422629616C006DE698 /* Hanken-Light.ttf */; };
+		2BFF2D452629616C006DE698 /* Hanken-Book.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 2BFF2D432629616C006DE698 /* Hanken-Book.ttf */; };
 		CB5D7DE777B35EAF69C4AF9F /* Pods_SleepyTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4489E537588B5976BEE8613F /* Pods_SleepyTests.framework */; };
 /* End PBXBuildFile section */
 
@@ -64,6 +67,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		2B0F0ABB26294D6F00D970E3 /* DashboardBannerCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DashboardBannerCollectionViewCell.swift; sourceTree = "<group>"; };
 		2B420A6F262891B200FAC9EA /* Main.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
 		2B420A7E262894D200FAC9EA /* StoryboardLoadable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoryboardLoadable.swift; sourceTree = "<group>"; };
 		2B420A8E2628966C00FAC9EA /* DashboardItemCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DashboardItemCollectionViewCell.swift; sourceTree = "<group>"; };
@@ -104,6 +108,8 @@
 		2BC28FCF262867C700A565BE /* StoryDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoryDetailViewController.swift; sourceTree = "<group>"; };
 		2BC28FD72628683800A565BE /* DashboardRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DashboardRouter.swift; sourceTree = "<group>"; };
 		2BC28FDC262868B800A565BE /* GenericRouting.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GenericRouting.swift; sourceTree = "<group>"; };
+		2BFF2D422629616C006DE698 /* Hanken-Light.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Hanken-Light.ttf"; sourceTree = "<group>"; };
+		2BFF2D432629616C006DE698 /* Hanken-Book.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Hanken-Book.ttf"; sourceTree = "<group>"; };
 		4489E537588B5976BEE8613F /* Pods_SleepyTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SleepyTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		48C5FE3BF75FA94457BBEAE3 /* Pods-Sleepy.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Sleepy.release.xcconfig"; path = "Target Support Files/Pods-Sleepy/Pods-Sleepy.release.xcconfig"; sourceTree = "<group>"; };
 		53B81CFB1FE0D483B6A1836C /* Pods-Sleepy.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Sleepy.debug.xcconfig"; path = "Target Support Files/Pods-Sleepy/Pods-Sleepy.debug.xcconfig"; sourceTree = "<group>"; };
@@ -162,6 +168,7 @@
 		2B420A8D2628965300FAC9EA /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				2B0F0ABB26294D6F00D970E3 /* DashboardBannerCollectionViewCell.swift */,
 				2B420A8E2628966C00FAC9EA /* DashboardItemCollectionViewCell.swift */,
 				2B4E6A022628BC560052EF7F /* DashboardItemListCollectionViewCell.swift */,
 				2B4E69FD2628BB000052EF7F /* DashboardItemListView.swift */,
@@ -283,6 +290,7 @@
 				2B420A7C262894B500FAC9EA /* Extensions */,
 				2BB759652628274E0047F696 /* Models */,
 				2BB759072628204A0047F696 /* Network */,
+				2BFF2D412629616C006DE698 /* Resources */,
 				2BC28FC12628676800A565BE /* Routers */,
 				2BB7593E262825860047F696 /* Scenes */,
 			);
@@ -341,6 +349,15 @@
 				2BC28FDC262868B800A565BE /* GenericRouting.swift */,
 			);
 			path = Routers;
+			sourceTree = "<group>";
+		};
+		2BFF2D412629616C006DE698 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				2BFF2D432629616C006DE698 /* Hanken-Book.ttf */,
+				2BFF2D422629616C006DE698 /* Hanken-Light.ttf */,
+			);
+			path = Resources;
 			sourceTree = "<group>";
 		};
 		A4D4B5D10D6909C3D8E67FFD /* Pods */ = {
@@ -476,7 +493,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				2BC20CFA2628177F00AC850C /* LaunchScreen.storyboard in Resources */,
+				2BFF2D452629616C006DE698 /* Hanken-Book.ttf in Resources */,
 				2BC20CF72628177F00AC850C /* Assets.xcassets in Resources */,
+				2BFF2D442629616C006DE698 /* Hanken-Light.ttf in Resources */,
 				2B420A70262891B200FAC9EA /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -633,6 +652,7 @@
 				2BB75961262826BC0047F696 /* Global.swift in Sources */,
 				2BC28FC32628677200A565BE /* ApplicationRouter.swift in Sources */,
 				2BC28F9D2628654A00A565BE /* StoryDetailViewModel.swift in Sources */,
+				2B0F0ABC26294D6F00D970E3 /* DashboardBannerCollectionViewCell.swift in Sources */,
 				2BB75917262821250047F696 /* Endpoint.swift in Sources */,
 				2B420AA42628973200FAC9EA /* DashboardItem.swift in Sources */,
 				2BC28FD82628683800A565BE /* DashboardRouter.swift in Sources */,

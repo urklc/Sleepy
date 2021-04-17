@@ -9,7 +9,7 @@ import UIKit
 import Ugur
 
 enum DashboardSection: Int, CaseIterable {
-    case meditation, story
+    case meditation, banner, story
 }
 
 final class DashboardViewController: UIViewController, StoryboardLoadable {
@@ -43,6 +43,7 @@ final class DashboardViewController: UIViewController, StoryboardLoadable {
 
         collectionView.uk_registerCell(DashboardItemCollectionViewCell.self)
         collectionView.uk_registerCell(DashboardItemListCollectionViewCell.self)
+        collectionView.uk_registerCell(DashboardBannerCollectionViewCell.self)
     }
 
     private func apply(_ change: DashboardViewModel.Change) {
@@ -70,6 +71,8 @@ extension DashboardViewController: UICollectionViewDataSource {
         switch DashboardSection(rawValue: section)! {
         case .meditation:
             return 1
+        case .banner:
+            return viewModel.isBannerEnabled ? 1 : 0
         case .story:
             return viewModel.stories.count
         }
@@ -83,6 +86,12 @@ extension DashboardViewController: UICollectionViewDataSource {
                 .uk_dequeueReusableCell(indexPath: indexPath)
             cell.itemsListView.items = viewModel.meditations
             return cell
+
+        case .banner:
+            let cell: DashboardBannerCollectionViewCell = collectionView
+                .uk_dequeueReusableCell(indexPath: indexPath)
+            return cell
+
         case .story:
             let cell: DashboardItemCollectionViewCell = collectionView
                 .uk_dequeueReusableCell(indexPath: indexPath)
@@ -101,6 +110,10 @@ extension DashboardViewController: UICollectionViewDelegateFlowLayout {
         switch DashboardSection(rawValue: indexPath.section)! {
         case .meditation:
             return CGSize(width: collectionView.frame.width, height: 200)
+
+        case .banner:
+            return CGSize(width: collectionView.frame.width, height: 100)
+
         case .story:
             let width = (collectionView.frame.width - Margin.medium) / 2
             return CGSize(width: width, height: width)
