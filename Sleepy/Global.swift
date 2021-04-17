@@ -12,7 +12,7 @@ enum Global {
     static let baseURL = URL(string: "https://jsonblob.com/")!
 }
 
-enum Dimen {
+enum Margin {
 
-    static let defaultMargin: CGFloat = 16
+    static let medium: CGFloat = 8
 }

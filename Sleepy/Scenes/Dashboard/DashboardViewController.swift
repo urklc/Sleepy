@@ -9,7 +9,7 @@ import UIKit
 import Ugur
 
 enum DashboardSection: Int, CaseIterable {
-    case meditation
+    case meditation, story
 }
 
 final class DashboardViewController: UIViewController, StoryboardLoadable {
@@ -37,9 +37,12 @@ final class DashboardViewController: UIViewController, StoryboardLoadable {
     private func setupViews() {
         let collectionViewLayout = UICollectionViewFlowLayout()
         collectionViewLayout.scrollDirection = .vertical
+        collectionViewLayout.minimumLineSpacing = Margin.medium
+        collectionViewLayout.minimumInteritemSpacing = Margin.medium
         collectionView.collectionViewLayout = collectionViewLayout
 
-        collectionView.uk_registerCell(MeditationsCollectionViewCell.self)
+        collectionView.uk_registerCell(DashboardItemCollectionViewCell.self)
+        collectionView.uk_registerCell(DashboardItemListCollectionViewCell.self)
     }
 
     private func apply(_ change: DashboardViewModel.Change) {
@@ -64,16 +67,26 @@ extension DashboardViewController: UICollectionViewDataSource {
     }
 
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 1
+        switch DashboardSection(rawValue: section)! {
+        case .meditation:
+            return 1
+        case .story:
+            return viewModel.stories.count
+        }
     }
 
     func collectionView(_ collectionView: UICollectionView,
                         cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         switch DashboardSection(rawValue: indexPath.section)! {
         case .meditation:
-            let cell: MeditationsCollectionViewCell = collectionView
+            let cell: DashboardItemListCollectionViewCell = collectionView
                 .uk_dequeueReusableCell(indexPath: indexPath)
-            cell.meditationsListView.meditations = viewModel.meditations
+            cell.itemsListView.items = viewModel.meditations
+            return cell
+        case .story:
+            let cell: DashboardItemCollectionViewCell = collectionView
+                .uk_dequeueReusableCell(indexPath: indexPath)
+            cell.item = viewModel.stories[indexPath.row]
             return cell
         }
     }
@@ -88,6 +101,9 @@ extension DashboardViewController: UICollectionViewDelegateFlowLayout {
         switch DashboardSection(rawValue: indexPath.section)! {
         case .meditation:
             return CGSize(width: collectionView.frame.width, height: 200)
+        case .story:
+            let width = (collectionView.frame.width - Margin.medium) / 2
+            return CGSize(width: width, height: width)
         }
     }
 }

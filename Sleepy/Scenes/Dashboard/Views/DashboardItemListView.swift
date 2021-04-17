@@ -1,5 +1,5 @@
 //
-//  MeditationsListView.swift
+//  DashboardItemListView.swift
 //  Sleepy
 //
 //  Created by Ugur Kilic on 15.04.2021.
@@ -7,9 +7,9 @@
 
 import UIKit
 
-final class MeditationsListView: UIView {
+final class DashboardItemListView: UIView {
 
-    var meditations: [Meditation] = [] {
+    var items: [DashboardItem] = [] {
         didSet {
             reloadItems()
             collectionView.scrollRectToVisible(CGRect.zero, animated: true)
@@ -37,9 +37,9 @@ final class MeditationsListView: UIView {
         collectionView.dataSource = self
         collectionView.delegate = self
         collectionView.contentInset = UIEdgeInsets(top: 0,
-                                                   left: Dimen.defaultMargin,
+                                                   left: Margin.medium,
                                                    bottom: 0,
-                                                   right: Dimen.defaultMargin)
+                                                   right: Margin.medium)
         collectionView.uk_registerCell(DashboardItemCollectionViewCell.self)
         addSubview(collectionView)
         NSLayoutConstraint.activate([
@@ -56,23 +56,23 @@ final class MeditationsListView: UIView {
 }
 
 // MARK: - UICollectionViewDataSource
-extension MeditationsListView: UICollectionViewDataSource {
+extension DashboardItemListView: UICollectionViewDataSource {
 
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return meditations.count
+        return items.count
     }
 
     func collectionView(_ collectionView: UICollectionView,
                         cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell: DashboardItemCollectionViewCell = collectionView
             .uk_dequeueReusableCell(indexPath: indexPath)
-        cell.item = meditations[indexPath.row]
+        cell.item = items[indexPath.row]
         return cell
     }
 }
 
 // MARK: - UICollectionViewDelegateFlowLayout
-extension MeditationsListView: UICollectionViewDelegateFlowLayout {
+extension DashboardItemListView: UICollectionViewDelegateFlowLayout {
 
     func collectionView(_ collectionView: UICollectionView,
                         layout collectionViewLayout: UICollectionViewLayout,

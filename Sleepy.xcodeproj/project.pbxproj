@@ -13,8 +13,8 @@
 		2B420A7F262894D200FAC9EA /* StoryboardLoadable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B420A7E262894D200FAC9EA /* StoryboardLoadable.swift */; };
 		2B420A8F2628966C00FAC9EA /* DashboardItemCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B420A8E2628966C00FAC9EA /* DashboardItemCollectionViewCell.swift */; };
 		2B420AA42628973200FAC9EA /* DashboardItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B420AA32628973200FAC9EA /* DashboardItem.swift */; };
-		2B4E69FE2628BB000052EF7F /* MeditationsListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B4E69FD2628BB000052EF7F /* MeditationsListView.swift */; };
-		2B4E6A032628BC560052EF7F /* MeditationsCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B4E6A022628BC560052EF7F /* MeditationsCollectionViewCell.swift */; };
+		2B4E69FE2628BB000052EF7F /* DashboardItemListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B4E69FD2628BB000052EF7F /* DashboardItemListView.swift */; };
+		2B4E6A032628BC560052EF7F /* DashboardItemListCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B4E6A022628BC560052EF7F /* DashboardItemListCollectionViewCell.swift */; };
 		2BB759092628205F0047F696 /* NetworkController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BB759082628205F0047F696 /* NetworkController.swift */; };
 		2BB75911262820EF0047F696 /* Request.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BB75910262820EF0047F696 /* Request.swift */; };
 		2BB75917262821250047F696 /* Endpoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BB75916262821250047F696 /* Endpoint.swift */; };
@@ -68,8 +68,8 @@
 		2B420A7E262894D200FAC9EA /* StoryboardLoadable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoryboardLoadable.swift; sourceTree = "<group>"; };
 		2B420A8E2628966C00FAC9EA /* DashboardItemCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DashboardItemCollectionViewCell.swift; sourceTree = "<group>"; };
 		2B420AA32628973200FAC9EA /* DashboardItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DashboardItem.swift; sourceTree = "<group>"; };
-		2B4E69FD2628BB000052EF7F /* MeditationsListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MeditationsListView.swift; sourceTree = "<group>"; };
-		2B4E6A022628BC560052EF7F /* MeditationsCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MeditationsCollectionViewCell.swift; sourceTree = "<group>"; };
+		2B4E69FD2628BB000052EF7F /* DashboardItemListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DashboardItemListView.swift; sourceTree = "<group>"; };
+		2B4E6A022628BC560052EF7F /* DashboardItemListCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DashboardItemListCollectionViewCell.swift; sourceTree = "<group>"; };
 		2BB759082628205F0047F696 /* NetworkController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkController.swift; sourceTree = "<group>"; };
 		2BB75910262820EF0047F696 /* Request.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Request.swift; sourceTree = "<group>"; };
 		2BB75916262821250047F696 /* Endpoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Endpoint.swift; sourceTree = "<group>"; };
@@ -163,8 +163,8 @@
 			isa = PBXGroup;
 			children = (
 				2B420A8E2628966C00FAC9EA /* DashboardItemCollectionViewCell.swift */,
-				2B4E6A022628BC560052EF7F /* MeditationsCollectionViewCell.swift */,
-				2B4E69FD2628BB000052EF7F /* MeditationsListView.swift */,
+				2B4E6A022628BC560052EF7F /* DashboardItemListCollectionViewCell.swift */,
+				2B4E69FD2628BB000052EF7F /* DashboardItemListView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -626,7 +626,7 @@
 				2BC28FD0262867C700A565BE /* StoryDetailViewController.swift in Sources */,
 				2BB75937262824120047F696 /* DashboardRequest.swift in Sources */,
 				2BB7594D262825B00047F696 /* DashboardNetworkController.swift in Sources */,
-				2B4E69FE2628BB000052EF7F /* MeditationsListView.swift in Sources */,
+				2B4E69FE2628BB000052EF7F /* DashboardItemListView.swift in Sources */,
 				2BB75953262826050047F696 /* DashboardResponse.swift in Sources */,
 				2BB759092628205F0047F696 /* NetworkController.swift in Sources */,
 				2BB75911262820EF0047F696 /* Request.swift in Sources */,
@@ -642,7 +642,7 @@
 				2BC20CEE2628177F00AC850C /* AppDelegate.swift in Sources */,
 				2B420A7F262894D200FAC9EA /* StoryboardLoadable.swift in Sources */,
 				2BC28FDD262868B800A565BE /* GenericRouting.swift in Sources */,
-				2B4E6A032628BC560052EF7F /* MeditationsCollectionViewCell.swift in Sources */,
+				2B4E6A032628BC560052EF7F /* DashboardItemListCollectionViewCell.swift in Sources */,
 				2B420A8F2628966C00FAC9EA /* DashboardItemCollectionViewCell.swift in Sources */,
 				2BB759412628259B0047F696 /* DashboardViewModel.swift in Sources */,
 				2BB75977262828290047F696 /* SleepyImageModel.swift in Sources */,

@@ -42,11 +42,12 @@ final class DashboardItemCollectionViewCell: UICollectionViewCell {
     }
 
     private func setupView() {
+        contentView.backgroundColor = UIColor.red
         contentView.clipsToBounds = true
 
         itemImageView = UIImageView()
         itemImageView.translatesAutoresizingMaskIntoConstraints = false
-        itemImageView.contentMode = .scaleAspectFit
+        itemImageView.contentMode = .scaleAspectFill
         contentView.addSubview(itemImageView)
 
         titleLabel = UILabel()
