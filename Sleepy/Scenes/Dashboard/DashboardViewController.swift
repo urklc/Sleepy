@@ -9,7 +9,19 @@ import UIKit
 import Ugur
 
 enum DashboardSection: Int, CaseIterable {
+
     case meditation, banner, story
+
+    var title: String {
+        switch self {
+        case .meditation:
+            return "Meditations"
+        case .story:
+            return "Stories"
+        default:
+            return ""
+        }
+    }
 }
 
 final class DashboardViewController: UIViewController, StoryboardLoadable {
@@ -44,6 +56,7 @@ final class DashboardViewController: UIViewController, StoryboardLoadable {
         collectionViewLayout.minimumInteritemSpacing = Margin.large
         collectionView.collectionViewLayout = collectionViewLayout
 
+        collectionView.uk_registerSupplementarySectionHeaderView(DashboardSectionHeaderView.self)
         collectionView.uk_registerCell(DashboardItemCollectionViewCell.self)
         collectionView.uk_registerCell(DashboardItemListCollectionViewCell.self)
         collectionView.uk_registerCell(DashboardBannerCollectionViewCell.self)
@@ -102,6 +115,15 @@ extension DashboardViewController: UICollectionViewDataSource {
             return cell
         }
     }
+
+    func collectionView(_ collectionView: UICollectionView,
+                        viewForSupplementaryElementOfKind kind: String,
+                        at indexPath: IndexPath) -> UICollectionReusableView {
+        let view: DashboardSectionHeaderView = collectionView
+            .uk_dequeueSupplementarySectionHeaderView(indexPath: indexPath)
+        view.text = DashboardSection(rawValue: indexPath.section)!.title
+        return view
+    }
 }
 
 // MARK: - UICollectionViewDelegateFlowLayout
@@ -132,5 +154,15 @@ extension DashboardViewController: UICollectionViewDelegateFlowLayout {
                             left: horizontalMargin,
                             bottom: Margin.small,
                             right: horizontalMargin)
+    }
+
+    func collectionView(_ collectionView: UICollectionView,
+                        layout collectionViewLayout: UICollectionViewLayout,
+                        referenceSizeForHeaderInSection section: Int) -> CGSize {
+        guard DashboardSection(rawValue: section)!.title.count > 0 else {
+            return CGSize.zero
+        }
+        return CGSize(width: collectionView.frame.width,
+                      height: DashboardSectionHeaderView.expectedHeight)
     }
 }
