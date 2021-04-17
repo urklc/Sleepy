@@ -35,6 +35,7 @@ final class DashboardDetailViewController: UIViewController {
 
         playImageView.image = UIImage(named: "ic_play")
 
+        titleLabel.accessibilityIdentifier = Accessibility.dashboardDetailTitleLabel
         titleLabel.numberOfLines = 2
         titleLabel.applyDefaultStyling(weight: .bold, style: .title3)
 
