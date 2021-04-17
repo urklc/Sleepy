@@ -27,3 +27,21 @@ enum SleepyError: Error, CustomStringConvertible {
         }
     }
 }
+
+extension SleepyError: Equatable {
+
+    public static func == (lhs: SleepyError, rhs: SleepyError) -> Bool {
+        switch (lhs, rhs) {
+        case (.noData, .noData):
+            return true
+        case let (.invalidResponse(lhsValue), .invalidResponse(rhsValue)):
+            return lhsValue.localizedDescription == rhsValue.localizedDescription
+        case let (.network(lhsValue), .network(rhsValue)):
+            return lhsValue.localizedDescription == rhsValue.localizedDescription
+        case let (.general(lhsValue), .general(rhsValue)):
+            return lhsValue == rhsValue
+        default:
+            return false
+        }
+    }
+}

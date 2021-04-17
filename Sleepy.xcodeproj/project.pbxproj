@@ -20,10 +20,11 @@
 		2BB759672628275B0047F696 /* Meditation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BB759662628275B0047F696 /* Meditation.swift */; };
 		2BB7596F262827610047F696 /* Story.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BB7596E262827610047F696 /* Story.swift */; };
 		2BB75977262828290047F696 /* SleepyImageModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BB75976262828290047F696 /* SleepyImageModel.swift */; };
+		2BB7598C26282E8E0047F696 /* DashboardDataProviderMocks.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BB7598B26282E8E0047F696 /* DashboardDataProviderMocks.swift */; };
 		2BC20CEE2628177F00AC850C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BC20CED2628177F00AC850C /* AppDelegate.swift */; };
 		2BC20CF72628177F00AC850C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2BC20CF62628177F00AC850C /* Assets.xcassets */; };
 		2BC20CFA2628177F00AC850C /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2BC20CF82628177F00AC850C /* LaunchScreen.storyboard */; };
-		2BC20D052628178000AC850C /* SleepyTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BC20D042628178000AC850C /* SleepyTests.swift */; };
+		2BC20D052628178000AC850C /* DashboardViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BC20D042628178000AC850C /* DashboardViewModelTests.swift */; };
 		2BC20D102628178000AC850C /* SleepyUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BC20D0F2628178000AC850C /* SleepyUITests.swift */; };
 /* End PBXBuildFile section */
 
@@ -58,13 +59,14 @@
 		2BB759662628275B0047F696 /* Meditation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Meditation.swift; sourceTree = "<group>"; };
 		2BB7596E262827610047F696 /* Story.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Story.swift; sourceTree = "<group>"; };
 		2BB75976262828290047F696 /* SleepyImageModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SleepyImageModel.swift; sourceTree = "<group>"; };
+		2BB7598B26282E8E0047F696 /* DashboardDataProviderMocks.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DashboardDataProviderMocks.swift; sourceTree = "<group>"; };
 		2BC20CEA2628177F00AC850C /* Sleepy.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Sleepy.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		2BC20CED2628177F00AC850C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		2BC20CF62628177F00AC850C /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		2BC20CF92628177F00AC850C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		2BC20CFB2628177F00AC850C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		2BC20D002628178000AC850C /* SleepyTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SleepyTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		2BC20D042628178000AC850C /* SleepyTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SleepyTests.swift; sourceTree = "<group>"; };
+		2BC20D042628178000AC850C /* DashboardViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DashboardViewModelTests.swift; sourceTree = "<group>"; };
 		2BC20D062628178000AC850C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		2BC20D0B2628178000AC850C /* SleepyUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SleepyUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		2BC20D0F2628178000AC850C /* SleepyUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SleepyUITests.swift; sourceTree = "<group>"; };
@@ -153,6 +155,23 @@
 			path = Models;
 			sourceTree = "<group>";
 		};
+		2BB7598926282E740047F696 /* Scenes */ = {
+			isa = PBXGroup;
+			children = (
+				2BB7598A26282E7C0047F696 /* Dashboard */,
+			);
+			path = Scenes;
+			sourceTree = "<group>";
+		};
+		2BB7598A26282E7C0047F696 /* Dashboard */ = {
+			isa = PBXGroup;
+			children = (
+				2BC20D042628178000AC850C /* DashboardViewModelTests.swift */,
+				2BB7598B26282E8E0047F696 /* DashboardDataProviderMocks.swift */,
+			);
+			path = Dashboard;
+			sourceTree = "<group>";
+		};
 		2BC20CE12628177F00AC850C = {
 			isa = PBXGroup;
 			children = (
@@ -191,7 +210,7 @@
 		2BC20D032628178000AC850C /* SleepyTests */ = {
 			isa = PBXGroup;
 			children = (
-				2BC20D042628178000AC850C /* SleepyTests.swift */,
+				2BB7598926282E740047F696 /* Scenes */,
 				2BC20D062628178000AC850C /* Info.plist */,
 			);
 			path = SleepyTests;
@@ -377,7 +396,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				2BC20D052628178000AC850C /* SleepyTests.swift in Sources */,
+				2BB7598C26282E8E0047F696 /* DashboardDataProviderMocks.swift in Sources */,
+				2BC20D052628178000AC850C /* DashboardViewModelTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
