@@ -7,6 +7,12 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		2BB759092628205F0047F696 /* NetworkController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BB759082628205F0047F696 /* NetworkController.swift */; };
+		2BB75911262820EF0047F696 /* Request.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BB75910262820EF0047F696 /* Request.swift */; };
+		2BB75917262821250047F696 /* Endpoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BB75916262821250047F696 /* Endpoint.swift */; };
+		2BB7591F262821500047F696 /* BlobEndpoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BB7591E262821500047F696 /* BlobEndpoint.swift */; };
+		2BB7592E2628228B0047F696 /* SleepyError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BB7592D2628228B0047F696 /* SleepyError.swift */; };
+		2BB75937262824120047F696 /* BlobRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BB75936262824120047F696 /* BlobRequest.swift */; };
 		2BC20CEE2628177F00AC850C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BC20CED2628177F00AC850C /* AppDelegate.swift */; };
 		2BC20CF72628177F00AC850C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2BC20CF62628177F00AC850C /* Assets.xcassets */; };
 		2BC20CFA2628177F00AC850C /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2BC20CF82628177F00AC850C /* LaunchScreen.storyboard */; };
@@ -32,6 +38,12 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		2BB759082628205F0047F696 /* NetworkController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkController.swift; sourceTree = "<group>"; };
+		2BB75910262820EF0047F696 /* Request.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Request.swift; sourceTree = "<group>"; };
+		2BB75916262821250047F696 /* Endpoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Endpoint.swift; sourceTree = "<group>"; };
+		2BB7591E262821500047F696 /* BlobEndpoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BlobEndpoint.swift; sourceTree = "<group>"; };
+		2BB7592D2628228B0047F696 /* SleepyError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SleepyError.swift; sourceTree = "<group>"; };
+		2BB75936262824120047F696 /* BlobRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BlobRequest.swift; sourceTree = "<group>"; };
 		2BC20CEA2628177F00AC850C /* Sleepy.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Sleepy.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		2BC20CED2628177F00AC850C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		2BC20CF62628177F00AC850C /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -70,6 +82,35 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		2BB759072628204A0047F696 /* Network */ = {
+			isa = PBXGroup;
+			children = (
+				2BB75935262824030047F696 /* Requests */,
+				2BB759152628210C0047F696 /* Endpoints */,
+				2BB759082628205F0047F696 /* NetworkController.swift */,
+				2BB75910262820EF0047F696 /* Request.swift */,
+				2BB7592D2628228B0047F696 /* SleepyError.swift */,
+			);
+			path = Network;
+			sourceTree = "<group>";
+		};
+		2BB759152628210C0047F696 /* Endpoints */ = {
+			isa = PBXGroup;
+			children = (
+				2BB75916262821250047F696 /* Endpoint.swift */,
+				2BB7591E262821500047F696 /* BlobEndpoint.swift */,
+			);
+			path = Endpoints;
+			sourceTree = "<group>";
+		};
+		2BB75935262824030047F696 /* Requests */ = {
+			isa = PBXGroup;
+			children = (
+				2BB75936262824120047F696 /* BlobRequest.swift */,
+			);
+			path = Requests;
+			sourceTree = "<group>";
+		};
 		2BC20CE12628177F00AC850C = {
 			isa = PBXGroup;
 			children = (
@@ -93,6 +134,7 @@
 		2BC20CEC2628177F00AC850C /* Sleepy */ = {
 			isa = PBXGroup;
 			children = (
+				2BB759072628204A0047F696 /* Network */,
 				2BC20CED2628177F00AC850C /* AppDelegate.swift */,
 				2BC20CF62628177F00AC850C /* Assets.xcassets */,
 				2BC20CF82628177F00AC850C /* LaunchScreen.storyboard */,
@@ -126,6 +168,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 2BC20D142628178000AC850C /* Build configuration list for PBXNativeTarget "Sleepy" */;
 			buildPhases = (
+				2BB759262628220C0047F696 /* ShellScript */,
 				2BC20CE62628177F00AC850C /* Sources */,
 				2BC20CE72628177F00AC850C /* Frameworks */,
 				2BC20CE82628177F00AC850C /* Resources */,
@@ -268,6 +311,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2BB7592E2628228B0047F696 /* SleepyError.swift in Sources */,
+				2BB75937262824120047F696 /* BlobRequest.swift in Sources */,
+				2BB759092628205F0047F696 /* NetworkController.swift in Sources */,
+				2BB75911262820EF0047F696 /* Request.swift in Sources */,
+				2BB75917262821250047F696 /* Endpoint.swift in Sources */,
+				2BB7591F262821500047F696 /* BlobEndpoint.swift in Sources */,
 				2BC20CEE2628177F00AC850C /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
