@@ -11,18 +11,18 @@ final class StoryDetailViewModel {
 
     enum Change {
 
-        case initial(Story)
+        case initial(DashboardItem)
     }
 
     var stateChangeHandler: ((Change) -> Void)? {
         didSet {
-            stateChangeHandler?(.initial(story))
+            stateChangeHandler?(.initial(item))
         }
     }
 
-    private let story: Story
+    private let item: DashboardItem
 
-    init(story: Story) {
-        self.story = story
+    init(item: DashboardItem) {
+        self.item = item
     }
 }

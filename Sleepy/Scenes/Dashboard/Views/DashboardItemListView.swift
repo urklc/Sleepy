@@ -7,7 +7,15 @@
 
 import UIKit
 
+protocol DashboardItemListViewDelegate: class {
+
+    func dashboardItemListView(_ dashboardItemListView: DashboardItemListView,
+                               didSelect item: DashboardItem)
+}
+
 final class DashboardItemListView: UIView {
+
+    weak var delegate: DashboardItemListViewDelegate?
 
     var items: [DashboardItem] = [] {
         didSet {
@@ -71,6 +79,14 @@ extension DashboardItemListView: UICollectionViewDataSource {
             .uk_dequeueReusableCell(indexPath: indexPath)
         cell.item = items[indexPath.row]
         return cell
+    }
+}
+
+// MARK: - UICollectionViewDelegate
+extension DashboardItemListView: UICollectionViewDelegate {
+
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        delegate?.dashboardItemListView(self, didSelect: items[indexPath.row])
     }
 }
 

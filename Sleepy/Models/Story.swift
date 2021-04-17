@@ -26,6 +26,6 @@ extension Story: DashboardItem {
     }
 
     var imageUrl: String {
-        return image.small
+        image.small
     }
 }

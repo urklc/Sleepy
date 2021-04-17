@@ -19,6 +19,10 @@ struct Meditation: Decodable {
 extension Meditation: DashboardItem {
 
     var imageUrl: String {
-        return image.small
+        image.small
+    }
+
+    var date: Date {
+        releaseDate
     }
 }

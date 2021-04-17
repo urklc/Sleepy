@@ -100,6 +100,7 @@ extension DashboardViewController: UICollectionViewDataSource {
         case .meditation:
             let cell: DashboardItemListCollectionViewCell = collectionView
                 .uk_dequeueReusableCell(indexPath: indexPath)
+            cell.itemsListView.delegate = self
             cell.itemsListView.items = viewModel.meditations
             return cell
 
@@ -123,6 +124,17 @@ extension DashboardViewController: UICollectionViewDataSource {
             .uk_dequeueSupplementarySectionHeaderView(indexPath: indexPath)
         view.text = DashboardSection(rawValue: indexPath.section)!.title
         return view
+    }
+}
+
+// MARK: - UICollectionViewDelegate
+extension DashboardViewController: UICollectionViewDelegate {
+
+    func collectionView(_ collectionView: UICollectionView,
+                        didSelectItemAt indexPath: IndexPath) {
+        if indexPath.section == DashboardSection.story.rawValue {
+            router?.routeToDetail(context: self, item: viewModel.stories[indexPath.row])
+        }
     }
 }
 
@@ -164,5 +176,14 @@ extension DashboardViewController: UICollectionViewDelegateFlowLayout {
         }
         return CGSize(width: collectionView.frame.width,
                       height: DashboardSectionHeaderView.expectedHeight)
+    }
+}
+
+// MARK: - DashboardItemListViewDelegate
+extension DashboardViewController: DashboardItemListViewDelegate {
+
+    func dashboardItemListView(_ dashboardItemListView: DashboardItemListView,
+                               didSelect item: DashboardItem) {
+        router?.routeToDetail(context: self, item: item)
     }
 }

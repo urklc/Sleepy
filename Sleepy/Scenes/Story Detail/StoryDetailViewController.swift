@@ -7,25 +7,57 @@
 
 import UIKit
 
-final class StoryDetailViewController: UIViewController {
+final class StoryDetailViewController: UIViewController, StoryboardLoadable {
+
+    static let defaultStoryboardName = "Main"
 
     var viewModel: StoryDetailViewModel!
 
     var router: GenericRouting?
 
+    @IBOutlet private weak var backgroundImageView: UIImageView!
+    @IBOutlet private weak var playImageView: UIImageView!
+    @IBOutlet private weak var titleLabel: UILabel!
+    @IBOutlet private weak var descriptionLabel: UILabel!
+    @IBOutlet private weak var dateLabel: UILabel!
+
     override func viewDidLoad() {
         super.viewDidLoad()
+
+        setupViews()
 
         viewModel.stateChangeHandler = { [weak self] change in
             self?.apply(change)
         }
     }
 
+    private func setupViews() {
+        backgroundImageView.image = UIImage(named: "img_story_background")
+        backgroundImageView.contentMode = .scaleAspectFill
+
+        playImageView.image = UIImage(named: "ic_play")
+
+        titleLabel.numberOfLines = 2
+        titleLabel.applyDefaultStyling(weight: .bold, style: .title3)
+
+        descriptionLabel.numberOfLines = 0
+        descriptionLabel.applyDefaultStyling(style: .body)
+
+        dateLabel.applyDefaultStyling(style: .caption1)
+    }
+
     private func apply(_ change: StoryDetailViewModel.Change) {
         switch change {
-        case .initial:
-            // TODO: Display story
-            break
+        case let .initial(item):
+            titleLabel.text = item.title
+            descriptionLabel.text = item.content
+            dateLabel.text = DateUtility.string(from: item.date)
         }
+    }
+
+    // MARK: - Actions
+
+    @IBAction func backButtonTapped() {
+        router?.pop(context: self)
     }
 }
