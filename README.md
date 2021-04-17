@@ -6,7 +6,7 @@
 - Application is developed using MVVM architecture with routers
 - TDD method is used while creating view models / business logic
 - SwiftLint is integrated to enforce coding conventions
-- Ugur pod is used for some initial project requirements
+- Ugur framework is used for some initial project requirements, call `pod install` to fetch dependencies.
 
 ## Missing
 

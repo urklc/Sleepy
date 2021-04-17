@@ -83,6 +83,7 @@
 		2B4E69FD2628BB000052EF7F /* DashboardItemListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DashboardItemListView.swift; sourceTree = "<group>"; };
 		2B4E6A022628BC560052EF7F /* DashboardItemListCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DashboardItemListCollectionViewCell.swift; sourceTree = "<group>"; };
 		2B5A90CF262AB761001937B0 /* DashboardSectionHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DashboardSectionHeaderView.swift; sourceTree = "<group>"; };
+		2BA36D74262B21B700C3F7F3 /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		2BB759082628205F0047F696 /* NetworkController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkController.swift; sourceTree = "<group>"; };
 		2BB75910262820EF0047F696 /* Request.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Request.swift; sourceTree = "<group>"; };
 		2BB75916262821250047F696 /* Endpoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Endpoint.swift; sourceTree = "<group>"; };
@@ -285,6 +286,7 @@
 		2BC20CE12628177F00AC850C = {
 			isa = PBXGroup;
 			children = (
+				2BA36D74262B21B700C3F7F3 /* README.md */,
 				2BC20CEC2628177F00AC850C /* Sleepy */,
 				2BC20D032628178000AC850C /* SleepyTests */,
 				2BC20D0E2628178000AC850C /* SleepyUITests */,
