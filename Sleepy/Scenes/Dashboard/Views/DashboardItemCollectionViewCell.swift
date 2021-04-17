@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import Ugur
 
 final class DashboardItemCollectionViewCell: UICollectionViewCell {
 
@@ -14,11 +15,8 @@ final class DashboardItemCollectionViewCell: UICollectionViewCell {
             titleLabel.text = item?.title
             subtitleLabel.text = item?.subtitle
 
-            // TODO: Add async image downloader
-            if let image = item?.imageUrl,
-               let data = try? Data(contentsOf: URL(string: image)!) {
-                itemImageView.image = UIImage(data: data)
-            }
+            // TODO: Add caching
+            downloadSafeImage(view: itemImageView, urlString: item?.imageUrl)
         }
     }
 
@@ -38,6 +36,10 @@ final class DashboardItemCollectionViewCell: UICollectionViewCell {
 
     override func prepareForReuse() {
         super.prepareForReuse()
+        titleLabel.text = nil
+        subtitleLabel.text = nil
+        itemImageView.image = nil
+
         item = nil
     }
 
@@ -73,5 +75,13 @@ final class DashboardItemCollectionViewCell: UICollectionViewCell {
             subtitleLabel.leadingAnchor.constraint(equalTo: contentView.leadingAnchor),
             subtitleLabel.bottomAnchor.constraint(equalTo: contentView.bottomAnchor)
         ])
+    }
+}
+
+// MARK: - AsyncImageContainingCell
+extension DashboardItemCollectionViewCell: AsyncImageContainingCell {
+
+    var controlValue: String? {
+        return item?.title
     }
 }
