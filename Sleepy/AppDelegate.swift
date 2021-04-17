@@ -10,14 +10,12 @@ import UIKit
 @main
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
-    private var mainWindow: UIWindow!
+    private let router = ApplicationRouter()
 
     func application(
         _ application: UIApplication,
         didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
-        mainWindow = UIWindow(frame: UIScreen.main.bounds)
-        mainWindow.rootViewController = UIViewController()
-        mainWindow.makeKeyAndVisible()
+        router.initialize()
         return true
     }
 }
